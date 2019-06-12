@@ -8,7 +8,7 @@ function App() {
     <div className="App">
 
       <Link to='/friends'>Go to FriendsList</Link>
-      <Route path="/friends" component={FriendList} />
+      <Route exact path="/friends" component={FriendList} />
     </div>
   );
 }

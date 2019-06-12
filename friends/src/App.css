@@ -1,11 +1,13 @@
-.App {
+.card {
+  min-height: 200px;
+  justify-content: center;
   text-align: center;
 }
 
-.card {
-  width: 350px;
-  min-height: 200px;
-  justify-content: center
+
+.friend-card {
+  width: calc(100%/3);
+
 }
 .title {
   font-size: 1.5rem;
@@ -14,4 +16,15 @@
 .container {
   display: flex;
   flex-wrap: wrap;
+}
+.form-inline {
+  width: 100%;
+  margin-top: 10px;
+  justify-content: center;
+}
+.alert {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 10px auto;
 }

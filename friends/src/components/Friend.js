@@ -4,7 +4,7 @@ import { Card, CardTitle, CardSubtitle, CardText } from "reactstrap";
 const Friend = props => {
   const { name, age, email } = props.info;
   return (
-    <div className="card">
+    <div className="friend-card">
     
       <Card>
         <CardTitle className="title">
