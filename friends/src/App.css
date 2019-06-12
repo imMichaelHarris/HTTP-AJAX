@@ -2,12 +2,15 @@
   min-height: 200px;
   justify-content: center;
   text-align: center;
+  border: px solif #000;
 }
-
+ header {
+   text-align: center;
+ }
 
 .friend-card {
   width: calc(100%/3);
-
+  padding: 10px;
 }
 .title {
   font-size: 1.5rem;
