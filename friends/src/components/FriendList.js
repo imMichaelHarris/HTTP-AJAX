@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {Container} from 'reactstrap';
 import Friend from './Friend';
 
 import axios from "axios";
@@ -22,7 +23,10 @@ class FriendList extends React.Component {
       return (
         <>
           <Link to="/">Home</Link>
+          <Container>
           {this.state.friends.map(friend => <Friend key={friend.id} info={friend} />)}
+
+          </Container>
         </>
       );
     
