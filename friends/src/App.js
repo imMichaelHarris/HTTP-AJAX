@@ -17,7 +17,7 @@ class App extends React.Component {
       .get("http://localhost:5000/friends")
       .then(res => this.setState({ friends: res.data }))
       .catch(err => console.log(err))
-    }, 4000)
+    }, 0)
 
   }
   addFriend = newFriend => {
