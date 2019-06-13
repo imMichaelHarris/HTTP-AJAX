@@ -38,7 +38,7 @@ class FriendList extends React.Component {
           </header>
           <Container>
             {this.props.friends.map(friend => (
-              <Friend key={friend.id} info={friend} />
+              <Friend key={friend.id} info={friend} deleteFriend={this.props.deleteFriend} />
             ))}
             <footer>
               <Button onClick={this.toggleForm}>
@@ -51,7 +51,6 @@ class FriendList extends React.Component {
               )}
             </footer>
           </Container>
-          <Route path="/friends/:id" render={props => <Friend {...props} />} />
         </>
       );
     }
