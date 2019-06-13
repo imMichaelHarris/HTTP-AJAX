@@ -4,8 +4,9 @@
   text-align: center;
   border: px solif #000;
 }
- header {
+ header, footer {
    text-align: center;
+   margin:  0 auto;
  }
 
 .friend-card {
@@ -26,8 +27,17 @@
   justify-content: center;
 }
 .alert {
-  display: block;
   width: 100%;
   text-align: center;
   margin: 10px auto;
+}
+.center {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.card-footer {
+  display: flex;
+  justify-content: space-around;
 }
