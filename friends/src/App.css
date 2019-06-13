@@ -31,3 +31,9 @@
   text-align: center;
   margin: 10px auto;
 }
+.center {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}

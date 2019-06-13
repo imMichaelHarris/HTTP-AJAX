@@ -1,18 +1,14 @@
 import React from "react";
 import { Route, Link } from "react-router-dom";
-import { Container, Button } from "reactstrap";
+import { Container, Button, Spinner } from "reactstrap";
 import Friend from "./Friend";
 import FriendForm from "./FriendForm";
 
-import axios from "axios";
 class FriendList extends React.Component {
   state = {
     showForm: false,
     formBtnText: "Click here to add a friend"
   };
-
-
-
 
   toggleForm = e => {
     e.preventDefault();
@@ -27,9 +23,13 @@ class FriendList extends React.Component {
   };
 
   render() {
-    console.log(this.props)
-    if(!this.props.friends){
-      return <h1>Loading...</h1>
+    if (!this.props.friends) {
+      console.log("loading");
+      return (
+        <div className="center">
+          <Spinner color="primary" />
+        </div>
+      );
     } else {
       return (
         <>
@@ -41,20 +41,20 @@ class FriendList extends React.Component {
               <Friend key={friend.id} info={friend} />
             ))}
             <footer>
-              <Button onClick={this.toggleForm}>{this.state.formBtnText}</Button>
+              <Button onClick={this.toggleForm}>
+                {this.state.formBtnText}
+              </Button>
               {this.state.showForm ? (
-                <FriendForm addFriend={this.props.addFriend}/>
+                <FriendForm addFriend={this.props.addFriend} />
               ) : (
                 ""
               )}
             </footer>
           </Container>
-              <Route path="/friends/:id" render={props => <Friend {...props} />} />
-  
+          <Route path="/friends/:id" render={props => <Friend {...props} />} />
         </>
       );
     }
-
   }
 }
 
