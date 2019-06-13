@@ -1,5 +1,6 @@
 import React from "react";
-import { Container, Form, Button, Label, Input, Alert } from "reactstrap";
+import { Form, Button, Label, Input} from "reactstrap";
+import Errors from "./Errors";
 
 
 class FriendForm extends React.Component {
@@ -41,9 +42,7 @@ class FriendForm extends React.Component {
   render() {
     return (
       <>
-        <Alert color="danger" isOpen={this.state.error} toggle={this.toggle}>
-          {this.state.error}
-        </Alert>
+        <Errors error={this.state.error} toggle={this.toggle} />
         <Form inline>
           <Label for="name">Name</Label>
           <Input
