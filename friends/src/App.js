@@ -17,6 +17,16 @@ class App extends React.Component {
       .then(res => this.setState({ friends: res.data }))
       .catch(err => console.log(err));
   }
+  addFriend = newFriend => {
+    axios
+      .post("http://localhost:5000/friends", newFriend)
+      .then(res =>
+        this.setState({
+          friends: res.data
+        })
+      )
+      .catch(err => console.log(err));
+  };
 
   render(){
     return (
@@ -24,8 +34,8 @@ class App extends React.Component {
   
         <Route exact path="/" component={Home} />
   
-        <Route exact path="/friends" render={props => <FriendList {...props} friends={this.state.friends} />} />
-        <Route path="/friends/form" render={FriendForm} />
+        <Route exact path="/friends" render={props => <FriendList {...props} friends={this.state.friends} addFriend={this.addFriend}/>} />
+        <Route path="/friends/form" render={props => <FriendForm {...props} addFriend={this.addFriend} />} />
       </div>
     );
   }

@@ -7,7 +7,7 @@ class FriendForm extends React.Component {
     nameInput: "",
     ageInput: "",
     emailInput: "",
-    error: ""
+    error: null
   };
   addFriend = () => {
     if (
@@ -23,10 +23,9 @@ class FriendForm extends React.Component {
         name: this.state.nameInput,
         age: this.state.ageInput,
         email: this.state.emailInput,
-        id: Date.now()
       };
       this.props.addFriend(newFriend);
-
+      // this.props.history.push("/friends");
     }
   };
   handleChanges = e => {

@@ -12,16 +12,7 @@ class FriendList extends React.Component {
   };
 
 
-  addFriend = newFriend => {
-    axios
-      .post("http://localhost:5000/friends", newFriend)
-      .then(res =>
-        this.setState({
-          friends: res.data
-        })
-      )
-      .catch(err => console.log(err));
-  };
+
 
   toggleForm = e => {
     e.preventDefault();
@@ -52,7 +43,7 @@ class FriendList extends React.Component {
             <footer>
               <Button onClick={this.toggleForm}>{this.state.formBtnText}</Button>
               {this.state.showForm ? (
-                <FriendForm addFriend={this.addFriend} />
+                <FriendForm addFriend={this.props.addFriend}/>
               ) : (
                 ""
               )}
